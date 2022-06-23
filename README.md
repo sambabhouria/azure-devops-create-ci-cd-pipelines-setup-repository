@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# LetsDevOps: Introduction to Azure DevOps for Beginners - Create CI/CD Pipelines, Setup Repository
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+DevOps is a process which helps to enable continuous delivery of value to our end users. Delivery of Software is a process of Planning, 
+Developing, Build, Test, Deploy and Retrospective. Azure DevOps gives all these capabilities to achieve the Continuous Delivery under a single platform.
 
-In the project directory, you can run:
 
-### `npm start`
+![Cpature](azure-step.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Azure DevOps Components
 
+![Cpature](azure-devops-components.png)
+
+
+1. Azure Boards
+
+ This component helps to plan your Backlog, Sprint and track it across the team.
+![Cpature](boards.png)
+
+
+2. Azure Repos
+
+This helps to manage the Code Repository with unlimited private Git Repo. It can be integrated with Centralized [TFS] as well as decentralized [Git] repository with Source Code Management 
+![Cpature](repos.png)
+
+3. Azure Pipelines
+
+This is very important feature for the DevOps practice. Azure Pipelines helps to setup the  [CI/CD] 
+Continuous Integration and Continuous Deployment. The beauty of this component is that it can be used for any platform like Windows, Linux, Mac OS as well as with any Cloud provider.
+
+![Cpature](piplines.png)
+
+4. Azure Test Plans
+
+This component helps to integrate the TestPlans for your application to validate the changes before shipping to the Customer.
+
+![Cpature](tests.png)
+
+5. Azure Artifact
+
+Azure Artifact helps to create package which can be shared by different Teams also this can be integrated with CI/CD pipeline.
+![Cpature](artifacts.png)
+
+
+
+
+
+
+
+
+### What is YAML
+
+YAML is a human-readable data-serialization language and it helps to configure pipeline as a Code.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+`Indentation is very important in YAML.`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## YAML Pipeline
 
-### `npm run build`
+In Azure DevOps, Pipelines helps to setup Continuous Integration/ Continuous Deployment and to achieve
+this we have below two option .
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Classic Editor.
+2. YAML Pipeline.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In this Document we will discuss setup YAML Pipeline.
+# YAML Pipeline Structure 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![https://github.com/sambabhouria/complete-guide-to-learn-and-setup-yaml-pipeline-in-azure-devops](Yaml-pipeline-structure.png)
 
-### `npm run eject`
+# Hierarchy of YAML File
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Component of YAML Pipeline
+Here is the list of component which we use in YAML pipeline creation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Stages.
+Stage is collection of Jobs which runs sequentially.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![https://github.com/sambabhouria/complete-guide-to-learn-and-setup-yaml-pipeline-in-azure-devops](stages.png)
 
-## Learn More
+2. Jobs.
+Job is Collection of Steps that runs on agents/environment.
+![https://github.com/sambabhouria/complete-guide-to-learn-and-setup-yaml-pipeline-in-azure-devops](jobs.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Steps.
+Steps helps to define the set of process to setup your task or any activity which you want to perform on any specific job.
 
-### Code Splitting
+Kind of Steps
++ `Task`
++ `Script`
++ `templatereference`
+![Cpature](steps.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Schema of YAML Pipeline file.
 
-### Analyzing the Bundle Size
+![Cpature](schema-of-pipeline-file.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# `Important Note:-`
 
-### Making a Progressive Web App
+1.In some cases if there is only one stage required for pipeline we can omit stage keyword and can directly start from Jobs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. In some build setup where only one agent is required for pipeline in that case we can omit Job and directly define the Steps.
 
-### Advanced Configuration
+# DEMO:
+We can begin with demo to setup YAML pipeline for below three scenarios.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`Single Stage, Single Job YAML Pipeline`
+`Single Stage Multi Job YAML Pipeline`
+`Multi Stage YAML Pipeline`
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Single Stage, Single Job YAML Pipeline
 
-### `npm run build` fails to minify
+Assume that if you have assigned to setup build for an application. In this scenario we can omit stages or Jobs.
+![https://github.com/sambabhouria/complete-guide-to-learn-and-setup-yaml-pipeline-in-azure-devops](single-stage-single-job.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here you can notice that we did not include the Stage and Job section  in the YAML pipeline as it is not required in this scenario.
+
+2. Single Stage Multi Job YAML Pipeline
+
+Let's assume you have to perform some activity on different Agent. Like building application on Windows, Mac OS, Linux. In this scenario we can create multiple job and each job can be assigned with respective agent.
+![https://github.com/sambabhouria/complete-guide-to-learn-and-setup-yaml-pipeline-in-azure-devops](single-stage-multi-job.png)
+
+
+3. Multi Stage YAML Pipeline.
+
+In this scenario you have assigned one application where you need to build the Project, package it. After that you need to deploy the application. In this case we can create two stage.
+
+Stage1 --> Build the Application
+Stage 2 --> Deploy the Application
+![https://github.com/sambabhouria/complete-guide-to-learn-and-setup-yaml-pipeline-in-azure-devops](multi-stage-multi-job.png)
+
+
+For more watch this video
+
+[YAML Pipeline Tutorial](https://www.youtube.com/watch?v=JtbG6WkLGng&ab_channel=SumitRaj)
