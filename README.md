@@ -69,3 +69,44 @@ Under the Organization you can create Project.
 Organization --> New Project --> Create
 ![projects](orga.png)
 ![projects](p2.png)
+
+# Azure Repos
+
+Azure Repos helps to create and Manage Source Code which further will be used to Build and Deploy.
+For example we can import any sample Project to setup the CI/CD. Use below git repo to import.
+![projects](step1.png)
+![projects](step2.png)
+![projects](step3.png)
+
+#  Azure Pipelines
+
+Once the Source Control setup is completed now we can setup the Continuous Integration and Continuous Deployment
+
+Continuous Integration
+
+Continuous Integration is a process to setup the Build for your application Project, which enables to trigger build pipeline
+automatically on each source code Check-In. This helps to track the Build status and and identify build failure caused by specific change.
+Lets setup the CI step by Step.
+
+
+Step :1 Create Build Pipeline
+
+Pipelines --> Create Pipeline
+![projects](pipe1.png)
+
+
+Step 2:  Select the respective repository and the branch.
+![projects](pipe2.png)
+
+
+Step 3:  Create the build using the Classic Editor
+![projects](pipe3.png)
+
+
+Step 4:  Use the ASP.NET Build template since the Sample Repo is ASP.NET web Application.
+![projects](pipe4.png)
+
+
+Step 5: Save the Pipeline and Queue the Build.
+
+![projects](pipe5.png)
