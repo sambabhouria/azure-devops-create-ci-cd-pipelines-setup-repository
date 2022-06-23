@@ -41,3 +41,31 @@ This component helps to integrate the TestPlans for your application to validate
 
 Azure Artifact helps to create package which can be shared by different Teams also this can be integrated with CI/CD pipeline.
 ![Cpature](artifacts.png)
+
+
+## Account Setup
+
+If you do not have Azure DevOps setup you can start for free but you need to sign up using any valid account. Follow below link and start for Free.
+
+
+https://azure.microsoft.com/en-us/services/devops/?nav=min:
+
+![Cpature](services.png)
+
+# Organization.
+
+Organization is collection of related projects. Also it helps to organize the different Projects.
+Once you are signed up there will be Organization created. You can create Multiple Organization with Create New Organization.
+
+![Cpature](orga.png)
+
+
+# Project
+Project helps to build the Software Solution which includes Planning, Tracking,
+Source Code Management, Setting Up CI/CD, Releasing Artifact. Once you create Project team will be created Automatically.
+Under the Organization you can create Project.
+
+## Create Project
+Organization --> New Project --> Create
+![projects](orga.png)
+![projects](p2.png)
