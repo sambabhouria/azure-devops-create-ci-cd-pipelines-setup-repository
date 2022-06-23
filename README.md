@@ -110,3 +110,7 @@ Step 4:  Use the ASP.NET Build template since the Sample Repo is ASP.NET web App
 Step 5: Save the Pipeline and Queue the Build.
 
 ![projects](pipe5.png)
+
+
+Step 6: If you get below error it mean the Free tier is not approved by Microsoft. If you are using MSDN Account you will not receive this error
+![projects](pipe6.png)
