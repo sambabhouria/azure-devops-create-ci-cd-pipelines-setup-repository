@@ -82,7 +82,8 @@ For example we can import any sample Project to setup the CI/CD. Use below git r
 
 Once the Source Control setup is completed now we can setup the Continuous Integration and Continuous Deployment
 
-Continuous Integration
+
+8-) `Continuous Integration`
 
 Continuous Integration is a process to setup the Build for your application Project, which enables to trigger build pipeline
 automatically on each source code Check-In. This helps to track the Build status and and identify build failure caused by specific change.
@@ -112,5 +113,101 @@ Step 5: Save the Pipeline and Queue the Build.
 ![projects](pipe5.png)
 
 
-Step 6: If you get below error it mean the Free tier is not approved by Microsoft. If you are using MSDN Account you will not receive this error
+Step 6: If you get below error it mean the Free tier is not approved by Microsoft. If you are using MSDN Account you will not receive this error;
+
+Solution 1: To solve this error you need to send email to Microsoft. Follow below instruction.
+
+
+Private Project:
+
+You could send email to azpipelines-freetier@microsoft.com in order to get your free tier.
+
+Your name
+
+Name of the Azure DevOps organization
+
+Public Project:
+
+You could send email to azpipelines-ossgrant@microsoft.com in order to get your free tier.
+
+Your name
+
+Azure DevOps organization for which you are requesting the free grant
+
+Links to the repositories that you plan to build
+
+Brief description of your project
+
+Solution 2: If you have self hosted agent you can configure to run the Build. In my case I will use configured self hosted Agent.
+
+
+If you want to learn on How to Configure Self Hosted Agent please follow below article.
+
+
+https://www.letsdevops.net/post/azure-devops-configure-self-hosted-agent-on-the-azure-devops
 ![projects](pipe6.png)
+
+Demo: https://www.youtube.com/watch?v=zWwnXR5CqYM&t=170s
+
+Step 7: Once you configured the Agent you can update the pipeline to run with self Hosted Agent Pool.
+
+![projects](agent.png)
+
+Step 8: Save and queue the Build and on successful run you will see the output like below.
+![projects](queue.png)
+
+Step 9: Now you can enable the Continuous Integration and save the changes. With this changes on each check-in the Build will be triggered.
+
+
+Edit Pipeline --> Triggers --> Enable continuous integration
+
+![projects](continue-integration.png)
+
+
+
+8-) `Continuous Deployment`
+
+Continuous deployment is a process to deploy the changes on the different environment.
+
+Once the Build (CI) is completed now its time to deploy the package. This will help to make your application available for use.
+
+
+Step 1: Create Release Pipeline
+
+![projects](relase1.png)
+
+
+
+Step 2: Since we have build the ASP.NET Solution. I will be selecting the below IIS Website Deployment template.
+
+![projects](relase2.png)
+
+
+Step 3: Now we need to configure the deployment group. Deployment group is the collection of Machine on which deployment will run.
+With this required package will be deployed to the respective target machine.
+
+![projects](trarget-group.png)
+
+Step 4: Click on the Setting Button and create the Group.
+![projects](deploiment.png)
+
+
+Step 5:  Once group created now you will see PowerShell command that needs to be run on the machine where you want to deploy the Application.
+
+
+![projects](group.png)
+
+
+Step 6: Open PowerShell as admin on the deployment machine and run the script.
+
+
+![projects](script.png)
+
+
+Step 7: Once the Deployment Machine is configured you can see it Online.
+![projects](deploiement.png)
+
+
+Step 7: Now Complete the Release pipeline setup and save the changes after adding the deployment group details. Required Tag you can setup during t
+
+![projects](dep-job.png)
