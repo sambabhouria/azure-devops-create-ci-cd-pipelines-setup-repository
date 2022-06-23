@@ -211,3 +211,7 @@ Step 7: Once the Deployment Machine is configured you can see it Online.
 Step 7: Now Complete the Release pipeline setup and save the changes after adding the deployment group details. Required Tag you can setup during t
 
 ![projects](dep-job.png)
+
+Step 8: Add the Artifact so that it will use the package which created during the CI.
+
+![projects](artifact.png)
