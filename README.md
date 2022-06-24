@@ -215,3 +215,31 @@ Step 7: Now Complete the Release pipeline setup and save the changes after addin
 Step 8: Add the Artifact so that it will use the package which created during the CI.
 
 ![projects](artifact.png)
+
+
+Step 9:  Create Release and deploy it.
+
+![projects](relase.png)
+
+
+Step 10: On Successful deployment you can see the Stage Deployment completed.
+
+![projects](depy.png)
+
+
+
+Step 11: Enable the Continuous Deployment
+
+Edit Release Pipeline --> Trigger --> Enabled
+
+![projects](enable.png)
+
+
+Continuous Integration and Continuous Deployment Simulation.
+
+
+Since the CI and CD is enabled and now I will make a simple check -in in the Source Repository and that will trigger the Build as well as deployment without any human intervention.
+
+For more watch this video
+
+[YAML Pipeline Tutorial](https://www.youtube.com/watch?v=h-KVX1lADxw)
